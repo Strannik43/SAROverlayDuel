@@ -1,0 +1,36 @@
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\bin\Release\SAR Overlay Duel.exe.config
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\bin\Release\SAR Overlay Duel.exe.manifest
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\bin\Release\SAR Overlay Duel.application
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\bin\Release\SAR Overlay Duel.exe
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\bin\Release\SAR Overlay Duel.pdb
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\SAR Overlay Duel.csproj.AssemblyReference.cache
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\SAR Overlay Duel.csproj.SuggestedBindingRedirects.cache
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\CommandsWindow.g.cs
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\Lobby_0_Window.g.cs
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\Lobby_1_Window.g.cs
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\MainWindow.g.cs
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\SARItemsPanelWindow.g.cs
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\SettingsWindow.g.cs
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\SpawnLobbySettingsWindow.g.cs
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\TournamentDuelInfoWindow.g.cs
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\TournamentSettingsWindow.g.cs
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\App.g.cs
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\SAR Overlay Duel_MarkupCompile.cache
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\SAR Overlay Duel_MarkupCompile.lref
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\CommandsWindow.baml
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\Lobby_0_Window.baml
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\Lobby_1_Window.baml
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\MainWindow.baml
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\SARItemsPanelWindow.baml
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\SettingsWindow.baml
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\SpawnLobbySettingsWindow.baml
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\TournamentDuelInfoWindow.baml
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\TournamentSettingsWindow.baml
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\SAR Overlay Duel.g.resources
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\SAR_Overlay_Duel.Properties.Resources.resources
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\SAR Overlay Duel.csproj.GenerateResource.cache
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\SAR Overlay Duel.csproj.CoreCompileInputs.cache
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\SAR Overlay Duel.exe.manifest
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\SAR Overlay Duel.application
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\SAR Overlay Duel.exe
+C:\Users\melom\source\repos\SAR Overlay Duel\SAR Overlay Duel\obj\Release\SAR Overlay Duel.pdb

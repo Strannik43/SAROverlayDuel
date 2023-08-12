@@ -1,0 +1,331 @@
+﻿<Window x:Class="SAR_Overlay_Duel.SARItemsPanelWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SAR_Overlay_Duel"
+        mc:Ignorable="d"
+        Title="SARItemsPanelWindow" Height="480" Width="384" ResizeMode="NoResize" AllowsTransparency="True" WindowStyle="None" Topmost="True"  Opacity="1">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style x:Key="FocusVisual">
+                <Setter Property="Control.Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+            <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+            <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+            <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+            <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+            <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+            <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+            <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+            <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+                <!-- <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/> -->
+                <Setter Property="Background" Value="#FF474747"/>
+                <!-- <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/> -->
+                <Setter Property="BorderBrush" Value="white"/>
+                <!--<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>-->
+                <Setter Property="Foreground" Value="white"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Padding" Value="1"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="border" CornerRadius="8" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsDefaulted" Value="true">
+                                    <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="true">
+                                    <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="false">
+                                    <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                    <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.Background>
+        <LinearGradientBrush EndPoint="1.0,0" StartPoint="0.0,0">
+            <GradientStop Offset="0"/>
+            <GradientStop Offset="0.7" Color="#7FFFFFFF"/>
+            <GradientStop Color="#BFACD2EC" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+
+    <Grid Button.Click="TagItems">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions >
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Column="0" Grid.Row="0" Background="#FF595959" Tag="Pistol_Common">
+            <Image Source="Resources/gun_pistol_grey.png"/>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="0" Tag="Pistol_Uncommon" Background="#FF6bbf00" >
+            <Image Source="Resources/gun_pistol_grey.png" />
+        </Button>
+        <Button Grid.Column="2" Grid.Row="0" Tag="Pistol_Rare" Background="#FF00b5f2">
+            <Image Source="Resources/gun_pistol_grey.png"/>
+        </Button>
+        <Button Grid.Column="3" Grid.Row="0" Tag="Pistol_Epic" Background="#FF8733c6">
+            <Image Source="Resources/gun_pistol_grey.png"/>
+        </Button>
+        <Button Grid.Column="4" Grid.Row="0" Tag="DualPistols_Common" Background="#FF595959" >
+            <Image Source="Resources/gun_dualies_grey.png" />
+        </Button>
+        <Button Grid.Column="5" Grid.Row="0" Tag="DualPistols_Uncommon" Background="#FF6bbf00">
+            <Image Source="Resources/gun_dualies_grey.png"/>
+        </Button>
+        <Button Grid.Column="6" Grid.Row="0" Tag="DualPistols_Rare" Background="#FF00b5f2">
+            <Image Source="Resources/gun_dualies_grey.png"/>
+        </Button>
+        <Button Grid.Column="7" Grid.Row="0" Tag="DualPistols_Epic" Background="#FF8733c6">
+            <Image Source="Resources/gun_dualies_grey.png"/>
+        </Button>
+
+        <Button Grid.Column="0" Grid.Row="1" Tag="Magnum_Common" Background="#FF595959" >
+            <Image Source="Resources/gun_magnum_grey.png" />
+        </Button>
+        <Button Grid.Column="1" Grid.Row="1" Tag="Magnum_Uncommon" Background="#FF6bbf00" >
+            <Image Source="Resources/gun_magnum_grey.png"/>
+        </Button>
+        <Button Grid.Column="2" Grid.Row="1" Tag="Magnum_Rare" Background="#FF00b5f2">
+            <Image Source="Resources/gun_magnum_grey.png"/>
+        </Button>
+        <Button Grid.Column="3" Grid.Row="1" Tag="Deagle_Epic" Background="#FF8733c6">
+            <Image Source="Resources/gun_deagle_grey.png"/>
+        </Button>
+        <Button Grid.Column="4" Grid.Row="1" Tag="Deagle_Legendary" Background="#FFf7cd0f">
+            <Image Source="Resources/gun_deagle_grey.png"/>
+        </Button>
+        <Button Grid.Column="5" Grid.Row="1" Tag="SilencedPistol_Epic" Background="#FF8733c6">
+            <Image Source="Resources/gun_silenced_pistol_grey.png"/>
+        </Button>
+        <Button Grid.Column="6" Grid.Row="1" Tag="SilencedPistol_Legendary" Background="#FFf7cd0f">
+            <Image Source="Resources/gun_silenced_pistol_grey.png"/>
+        </Button>
+        <Button Grid.Column="7" Grid.Row="1" Tag="Shotgun_Common" Background="#FF595959">
+            <Image Source="Resources/gun_shotgun_grey.png" />
+        </Button>
+
+        <Button Grid.Column="0" Grid.Row="2" Tag="Shotgun_Uncommon" Background="#FF6bbf00">
+            <Image Source="Resources/gun_shotgun_grey.png"/>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="2" Tag="Shotgun_Rare" Background="#FF00b5f2">
+            <Image Source="Resources/gun_shotgun_grey.png"/>
+        </Button>
+        <Button Grid.Column="2" Grid.Row="2" Tag="JAG7_Epic" Background="#FF8733c6">
+            <Image Source="Resources/gun_jag7_main.png"/>
+        </Button>
+        <Button Grid.Column="3" Grid.Row="2" Tag="JAG7_Legendary" Background="#FFf7cd0f">
+            <Image Source="Resources/gun_jag7_main.png"/>
+        </Button>
+        <Button Grid.Column="4" Grid.Row="2" Tag="SMG_Common" Background="#FF595959">
+            <Image Source="Resources/gun_smg_grey.png"/>
+        </Button>
+        <Button Grid.Column="5" Grid.Row="2" Tag="SMG_Uncommon" Background="#FF6bbf00">
+            <Image Source="Resources/gun_smg_grey.png"/>
+        </Button>
+        <Button Grid.Column="6" Grid.Row="2" Tag="SMG_Rare" Background="#FF00b5f2">
+            <Image Source="Resources/gun_smg_grey.png"/>
+        </Button>
+        <Button Grid.Column="7" Grid.Row="2" Tag="ThomasGun_Epic" Background="#FF8733c6">
+            <Image Source="Resources/gun_thomas_grey.png"/>
+        </Button>
+
+        <Button Grid.Column="0" Grid.Row="3" Tag="ThomasGun_Legendary" Background="#FFf7cd0f">
+            <Image Source="Resources/gun_thomas_grey.png"/>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="3" Tag="AK_Common" Background="#FF595959">
+            <Image Source="Resources/gun_ak_grey.png"/>
+        </Button>
+        <Button Grid.Column="2" Grid.Row="3" Tag="AK_Uncommon" Background="#FF6bbf00">
+            <Image Source="Resources/gun_ak_grey.png"/>
+        </Button>
+        <Button Grid.Column="3" Grid.Row="3" Tag="AK_Rare" Background="#FF00b5f2">
+            <Image Source="Resources/gun_ak_grey.png"/>
+        </Button>
+        <Button Grid.Column="4" Grid.Row="3" Tag="M16_Epic" Background="#FF8733c6">
+            <Image Source="Resources/gun_m16_grey.png"/>
+        </Button>
+        <Button Grid.Column="5" Grid.Row="3" Tag="M16_Legendary" Background="#FFf7cd0f">
+            <Image Source="Resources/gun_m16_grey.png"/>
+        </Button>
+        <Button Grid.Column="6" Grid.Row="3" Tag="DognasDartGun_Uncommon" Background="#FF6bbf00">
+            <Image Source="Resources/gun_dart_grey.png"/>
+        </Button>
+        <Button Grid.Column="7" Grid.Row="3" Tag="DognasDartGun_Rare" Background="#FF00b5f2">
+            <Image Source="Resources/gun_dart_grey.png"/>
+        </Button>
+
+        <Button Grid.Column="0" Grid.Row="4" Tag="DartFly_Epic" Background="#FF8733c6">
+            <Image Source="Resources/gun_dartfly_grey.png"/>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="4" Tag="DartFly_Legendary" Background="#FFf7cd0f">
+            <Image Source="Resources/gun_dartfly_grey.png"/>
+        </Button>
+        <Button Grid.Column="2" Grid.Row="4" Tag="HuntingRifle_Common" Background="#FF595959">
+            <Image Source="Resources/gun_rifle_grey.png"/>
+        </Button>
+        <Button Grid.Column="3" Grid.Row="4" Tag="HuntingRifle_Uncommon" Background="#FF6bbf00">
+            <Image Source="Resources/gun_rifle_grey.png"/>
+        </Button>
+        <Button Grid.Column="4" Grid.Row="4" Tag="HuntingRifle_Rare" Background="#FF00b5f2">
+            <Image Source="Resources/gun_rifle_grey.png"/>
+        </Button>
+        <Button Grid.Column="5" Grid.Row="4" Tag="Sniper_Epic" Background="#FF8733c6">
+            <Image Source="Resources/gun_sniper_grey.png"/>
+        </Button>
+        <Button Grid.Column="6" Grid.Row="4" Tag="Sniper_Legendary" Background="#FFf7cd0f">
+            <Image Source="Resources/gun_sniper_grey.png"/>
+        </Button>
+        <Button Grid.Column="7" Grid.Row="4" Tag="SuperiteLaser_Uncommon" Background="#FF6bbf00">
+            <Image Source="Resources/SuperiteLaser.png"/>
+        </Button>
+        <Button Grid.Column="0" Grid.Row="5" Tag="SuperiteLaser_Rare" Background="#FF00b5f2">
+            <Image Source="Resources/SuperiteLaser.png"/>
+        </Button>
+
+        <Button Grid.Column="1" Grid.Row="5" Tag="Minigun_Legendary" Background="#FFf7cd0f">
+            <Image Source="Resources/gun_minigun_grey.png"/>
+        </Button>
+        <Button  Grid.Column="2" Grid.Row="5" Tag="Bow_Uncommon" Background="#FF6bbf00">
+            <Image Source="Resources/gun_bow_default.png"/>
+        </Button>
+        <Button Grid.Column="3" Grid.Row="5" Tag="Bow_Rare" Background="#FF00b5f2">
+            <Image Source="Resources/gun_bow_default.png"/>
+        </Button>
+        <Button Grid.Column="4" Grid.Row="5" Tag="SparrowLauncher_Epic" Background="#FF8733c6">
+            <Image Source="Resources/sparrow.png"/>
+        </Button>
+        <Button Grid.Column="5" Grid.Row="5" Tag="SparrowLauncher_Legendary" Background="#FFf7cd0f">
+            <Image Source="Resources/sparrow.png"/>
+        </Button>
+        <Button Grid.Column="6" Grid.Row="5" Tag="BCG_Epic" Background="#FF8733c6">
+            <Image Source="Resources/bcg.png"/>
+        </Button>
+        <Button Grid.Column="7" Grid.Row="5" Tag="BCG_Legendary" Background="#FFf7cd0f">
+            <Image Source="Resources/bcg.png"/>
+        </Button>
+        
+        <Button Grid.Column="0" Grid.Row="6" Tag="LittleBullets">
+            <Image Source="Resources/ammo_pistolUI.png" Width="30" Height="30"/>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="6" Tag="BigBullets" >
+            <Image Source="Resources/ammo_rifleUI.png" Width="30" Height="30"/>
+        </Button>
+        <Button Grid.Column="2" Grid.Row="6" Tag="SniperBullets" >
+            <Image Source="Resources/ammo_sniperUI.png" Width="30" Height="30"/>
+        </Button>
+        <Button Grid.Column="3" Grid.Row="6" Tag="Shells" >
+            <Image Source="Resources/ammo_shotgunUI.png" Width="30" Height="30"/>
+        </Button>
+        <Button Grid.Column="4" Grid.Row="6" Tag="SpecialtyAmmo" >
+            <Image Source="Resources/ammo_specialtyUI.png" Width="30" Height="30"/>
+        </Button>
+        <Button Grid.Column="5" Grid.Row="6" Tag="SuperiteCartridges" >
+            <Image Source="Resources/SuperiteCartridges.png" Width="26" Height="26"/>
+        </Button>
+
+
+        <Button Grid.Column="0" Grid.Row="7" Tag="Cupgrade" Background="#FF00b5f2">
+            <Image Source="Resources/cupgrade.png" />
+        </Button>
+        <Button Grid.Column="1" Grid.Row="7" Tag="BananaForker" Background="#FF00b5f2">
+            <Image Source="Resources/bananaforker.png" />
+        </Button>
+        <Button Grid.Column="2" Grid.Row="7" Tag="SuperBandoiler" Background="#FF00b5f2">
+            <Image Source="Resources/attach-bandolier.png" />
+        </Button>
+        <Button Grid.Column="3" Grid.Row="7" Tag="ClawBoots" Background="#FF00b5f2">
+            <Image Source="Resources/attach-clawshoes.png" />
+        </Button>
+        <Button Grid.Column="4" Grid.Row="7" Tag="NinjaBooties" Background="#FF00b5f2">
+            <Image Source="Resources/attach-ninjashoes.png" />
+        </Button>
+        <Button Grid.Column="5" Grid.Row="7" Tag="ImposibleTape" Background="#FF00b5f2">
+            <Image Source="Resources/attach-tapedispenser.png" />
+        </Button>
+        <Button Grid.Column="6" Grid.Row="7" Tag="SkunkGasSnorkel" Background="#FF00b5f2">
+            <Image Source="Resources/skunkshorkel.png"  />
+        </Button>
+        <Button Grid.Column="7" Grid.Row="7" Tag="SuperJuicer" Background="#FF00b5f2">
+            <Image Source="Resources/SuperJuicer.png"  />
+        </Button>
+
+        <Button Grid.Column="0" Grid.Row="8" Tag="armor1" Background="#FF595959">
+            <Image Source="Resources/armor1lvl.png" />
+        </Button>
+        <Button Grid.Column="1" Grid.Row="8" Tag="armor2" Background="#FF6bbf00">
+            <Image Source="Resources/armor2lvl.png" />
+        </Button>
+        <Button Grid.Column="2" Grid.Row="8" Tag="armor3" Background="#FF00b5f2">
+            <Image Source="Resources/armor3lvl.png"/>
+        </Button>
+        <Button Grid.Column="3" Grid.Row="8" Tag="juice 200" Background="#FF00b5f2">
+            <Image Source="Resources/juice.png" />
+        </Button>
+        <Button Grid.Column="4" Grid.Row="8" Tag="tape 5" Background="#FF00b5f2">
+            <Image Source="Resources/SuperTape.png" />
+        </Button>
+        <Button Grid.Column="5" Grid.Row="8" Tag="banana 10" >
+            <Image Source="Resources/banana.png" />
+        </Button>
+
+        <Button x:Name="HamsterBallButton" Grid.Column="0" Grid.Row="9" Tag="hamball" Background="#f47f3d">
+            <Image Source="Resources/HamsterBall.png" />
+        </Button>
+        <Button x:Name="EmuButton" Grid.Column="1" Grid.Row="9" Tag="emu" Background="#f47f3d">
+            <Image Source="Resources/emu.png"/>
+        </Button>
+        <Button x:Name="BossButton" Grid.Column="2" Grid.Row="9" Tag="boss" Background="#f47f3d">
+            <Image Source="Resources/bossicon.png" />
+        </Button>
+        <Button x:Name="SoccerButton" Grid.Column="3" Grid.Row="9" Tag="soccer" Background="#f47f3d">
+            <Image Source="Resources/Soccer.png" Width="25" Height="25" />
+        </Button>
+    </Grid>
+</Window>
